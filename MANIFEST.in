@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include schedule_master *.css
+recursive-include schedule_master *.csv
+recursive-include schedule_master *.html
+recursive-include schedule_master *.ico
+recursive-include schedule_master *.js
+recursive-include schedule_master *.json
+recursive-include schedule_master *.md
+recursive-include schedule_master *.png
+recursive-include schedule_master *.py
+recursive-include schedule_master *.svg
+recursive-include schedule_master *.txt
+recursive-exclude schedule_master *.pyc

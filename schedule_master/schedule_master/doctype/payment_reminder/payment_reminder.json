@@ -1,0 +1,285 @@
+{
+ "autoname": "PR.####",
+ "creation": "2019-03-19 13:06:12.823652",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "party_type",
+  "party",
+  "party_name",
+  "get_details",
+  "column_break_3",
+  "company",
+  "mode_of_communication",
+  "reminder_for",
+  "status",
+  "section_break_9",
+  "company_address",
+  "column_break_11",
+  "customer_address",
+  "contact_details_section",
+  "contact_table",
+  "contact_email",
+  "follow_up_section",
+  "reminder_date",
+  "next_reminder_date",
+  "color",
+  "column_break_10",
+  "follow_up_by",
+  "next_follow_up_by",
+  "contact_number",
+  "send_sms",
+  "invoice_table_section",
+  "payment_reminder_table",
+  "section_break_8",
+  "total_outstanding_amount",
+  "pdc_cheque_amount",
+  "receivable_amount",
+  "column_break_23",
+  "total_overdue_days",
+  "reminder_list_section",
+  "reminder_table",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "default": "Customer",
+   "fieldname": "party_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Party Type",
+   "options": "\nCustomer\nSupplier",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "party",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Party",
+   "options": "Customer"
+  },
+  {
+   "fieldname": "get_details",
+   "fieldtype": "Button",
+   "label": "Get Details"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mode_of_communication",
+   "fieldtype": "Select",
+   "label": "Mode Of Communication",
+   "options": "\nCall\nEmail\nWhatsapp\nText Message"
+  },
+  {
+   "fieldname": "reminder_for",
+   "fieldtype": "Select",
+   "label": "Reminder For",
+   "options": "\nSales Invoice\nPurchase Invoice",
+   "read_only": 1
+  },
+  {
+   "default": "Open",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Open\nClose"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "contact_table",
+   "fieldtype": "Table",
+   "label": "Contact Table",
+   "options": "Contact Table"
+  },
+  {
+   "fieldname": "follow_up_section",
+   "fieldtype": "Section Break",
+   "label": "Follow Up"
+  },
+  {
+   "default": "Today",
+   "fieldname": "reminder_date",
+   "fieldtype": "Date",
+   "label": "Reminder Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "next_reminder_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Next Reminder Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "color",
+   "fieldtype": "Color",
+   "label": "Color"
+  },
+  {
+   "fieldname": "column_break_10",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "follow_up_by",
+   "fieldtype": "Link",
+   "label": "Follow Up By",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "next_follow_up_by",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Next Follow Up By",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_number",
+   "fieldtype": "Data",
+   "label": "Contact Number"
+  },
+  {
+   "fieldname": "send_sms",
+   "fieldtype": "Button",
+   "label": "Send SMS"
+  },
+  {
+   "fieldname": "invoice_table_section",
+   "fieldtype": "Section Break",
+   "label": "Invoice Table"
+  },
+  {
+   "fieldname": "payment_reminder_table",
+   "fieldtype": "Table",
+   "label": "Payment Reminder Table",
+   "options": "Payment Reminder Table"
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "total_outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Total Outstanding Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "reminder_list_section",
+   "fieldtype": "Section Break",
+   "label": "Reminder List"
+  },
+  {
+   "fieldname": "reminder_table",
+   "fieldtype": "Table",
+   "label": "Reminder Table",
+   "options": "Reminder Table"
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_overdue_days",
+   "fieldtype": "Int",
+   "label": "Total Overdue Days",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "party.customer_name",
+   "fieldname": "party_name",
+   "fieldtype": "Data",
+   "label": "Party Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "company_address",
+   "fieldtype": "Link",
+   "label": "Company Address",
+   "options": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_address",
+   "fieldtype": "Link",
+   "label": "Customer Address",
+   "options": "Address",
+   "reqd": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1,
+   "remember_last_selected_value": 1
+  },
+  {
+   "fieldname": "pdc_cheque_amount",
+   "fieldtype": "Currency",
+   "label": "PDC Cheque Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "receivable_amount",
+   "fieldtype": "Currency",
+   "label": "Receivable Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contact_email",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Contact Email"
+  }
+ ],
+ "modified": "2020-07-04 12:30:51.929082",
+ "modified_by": "Administrator",
+ "module": "Schedule Master",
+ "name": "Payment Reminder",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Follow Up",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "party"
+}
