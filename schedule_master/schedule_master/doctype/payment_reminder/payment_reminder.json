@@ -260,7 +260,7 @@
    "label": "Contact Email"
   }
  ],
- "modified": "2020-07-04 12:30:51.929082",
+ "modified": "2020-07-06 16:20:40.542952",
  "modified_by": "Administrator",
  "module": "Schedule Master",
  "name": "Payment Reminder",
@@ -281,5 +281,5 @@
  ],
  "sort_field": "modified",
  "sort_order": "DESC",
- "title_field": "party"
+ "title_field": "party_name"
 }

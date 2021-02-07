@@ -92,10 +92,13 @@ notification_config = "schedule_master.notifications.get_notification_config"
 
 scheduler_events = {
 	"cron": {
-		"0 0 * * 3": [
-			"schedule_master.schedule_master.overdue.sendmail"
-		]
-	}
+                "0 17 * * *": [
+                        "schedule_master.schedule_master.overdue.send_draft"
+                ],
+		"0 8 * * Thu": [
+                        "schedule_master.schedule_master.overdue.sendmail"
+                ]
+        }
 }
 
 # Testing

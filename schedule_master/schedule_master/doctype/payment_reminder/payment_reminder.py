@@ -17,9 +17,9 @@ def getOverdue(party):
 
 @frappe.whitelist(allow_guest=True)
 def getPDC(party):
-        data = frappe.db.sql("""select name,paid_amount 
-                        from `tabPayment Entry` where docstatus = 0 and party = %s and mode_of_payment = "PDC Cheque";""",(party),as_list=1)
-        return data
+        data = frappe.db.sql("""select sum(paid_amount)
+                        from `tabPayment Entry` where docstatus = 0 and party = %s and mode_of_payment = "PDC Cheque";""",(party))
+        return data[0][0] if data else 0.0
 
 @frappe.whitelist(allow_guest=True)
 def getContact(party):

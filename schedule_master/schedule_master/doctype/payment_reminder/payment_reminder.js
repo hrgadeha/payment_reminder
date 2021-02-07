@@ -54,12 +54,13 @@ party: frm.doc.party
 callback:function(r){
 	var len=r.message.length;
 	for (var i=0;i<len;i++){
-		console.log(r.message);
+//		console.log(r.message);
 	        var row_1 = frm.add_child("contact_table");
 		row_1.name1 = r.message[i][0];
 		row_1.department = r.message[i][1];
 		row_1.designation = r.message[i][2];
 		row_1.number = r.message[i][3];
+		row_1.email = r.message[i][4];
 		frm.set_value("contact_email",r.message[i][4]);
 	}
 		cur_frm.refresh();
@@ -95,7 +96,7 @@ frappe.ui.form.on("Payment Reminder Table", {
 		var d = locals[cdt][cdn];
 		var total = 0;
 		var sales_invoice = frm.doc.payment_reminder_table;
-		console.log(total)
+//		console.log(total)
 
    	for(var i in sales_invoice) {
 		total = total + sales_invoice[i].outstanding_amount;
@@ -133,7 +134,7 @@ frappe.ui.form.on('Payment Reminder', {
     }
 });
 
-
+/*
 frappe.ui.form.on("Payment Reminder", {
   get_details: function(frm) {
     frappe.call({
@@ -148,7 +149,17 @@ callback:function(r){
     });
 }
 });
+*/
 
-frappe.ui.form.on('Payment Reminder',  'validate',  function(frm) {
+/*frappe.ui.form.on('Payment Reminder',  'get_details',  function(frm) {
     frm.set_value("receivable_amount", frm.doc.total_outstanding_amount - frm.doc.pdc_cheque_amount);
+});*/
+
+frappe.ui.form.on("Contact Table", {
+        "mail": function(frm, cdt, cdn) {
+                var d = locals[cdt][cdn];
+         if(d.mail == 1){
+                frm.set_value("contact_email", d.email);
+        }
+}
 });
