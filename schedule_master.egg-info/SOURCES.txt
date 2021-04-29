@@ -17,6 +17,7 @@ schedule_master.egg-info/top_level.txt
 schedule_master/config/__init__.py
 schedule_master/config/desktop.py
 schedule_master/config/docs.py
+schedule_master/config/schedule_master.py
 schedule_master/schedule_master/__init__.py
 schedule_master/schedule_master/overdue.py
 schedule_master/schedule_master/doctype/__init__.py
