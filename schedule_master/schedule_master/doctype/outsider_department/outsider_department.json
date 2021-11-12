@@ -1,22 +1,24 @@
 {
- "allow_rename": 1,
- "autoname": "field:out_department",
- "creation": "2019-05-03 01:23:03.563464",
+ "actions": [],
+ "autoname": "field:outsider_department",
+ "creation": "2021-05-25 13:15:57.890226",
  "doctype": "DocType",
  "editable_grid": 1,
  "engine": "InnoDB",
  "field_order": [
-  "out_department"
+  "outsider_department"
  ],
  "fields": [
   {
-   "fieldname": "out_department",
+   "fieldname": "outsider_department",
    "fieldtype": "Data",
-   "label": "Department",
+   "label": "Outsider Department",
    "unique": 1
   }
  ],
- "modified": "2019-10-11 12:29:29.758502",
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2021-05-25 13:16:05.497427",
  "modified_by": "Administrator",
  "module": "Schedule Master",
  "name": "Outsider Department",
@@ -30,24 +32,12 @@
    "print": 1,
    "read": 1,
    "report": 1,
-   "role": "Sales User",
-   "share": 1,
-   "write": 1
-  },
-  {
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "Purchase User",
+   "role": "System Manager",
    "share": 1,
    "write": 1
   }
  ],
  "sort_field": "modified",
- "sort_order": "ASC",
+ "sort_order": "DESC",
  "track_changes": 1
 }

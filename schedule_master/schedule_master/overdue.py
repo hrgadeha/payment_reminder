@@ -4,9 +4,14 @@ from frappe.model.document import Document
 
 @frappe.whitelist(allow_guest=True)
 def sendmail():
+	recipient = []
 	customer_list = frappe.db.sql("""select customer,customer_name,contact_email,sum(outstanding_amount),contact_mobile,contact_display
 			from `tabSales Invoice` where docstatus = 1 and status = 'Overdue' group by customer;""")
 	for customer_obj in customer_list:
+		recipient = []
+		recipient.append('info@shreelight.com')
+#		recipient.append(customer_obj[2])
+#		recipient.append(customer_obj[0])
 		total = 0.0
 		customer = customer_obj[0]
 		customer_name = customer_obj[1]
@@ -27,9 +32,9 @@ def sendmail():
 			days = str(invoice_obj[4])
 			content = content + "<tr><td>"+invoice+"</td><td>"+posting_date+"</td><td>"+due_date+"</td><td>"+grand_total+"</td><td>"+days+"</td></tr>"
 		content = content + "</table><br><br><table><tr><td><b>RTGS / NEFT DETAILS : </b><br><b>NAME OF BANK : Induslnd Bank Ltd. </b><br><b>BRANCH ADDRESS :G.F. & F.F. GOLD CROFT, VISHWAS COLONY,</b><br><b>JETALPUR ROAD, VADODARA‐390005 ( GUJARAT )</b><br><b>PHONE NO : 0265‐2410750</b><br><br><b>ACCOUNT NAME : SHREELIGHT POWER PRIVATE LIMITED</b><br><b>BANK ACCOUNT NO : 650014032720</b><br><b>MICR CODE : 390234002</b><br><b>RTGS IFSC CODE : INDB0000017</b><br><b>NEFT IFSC CODE : INDB0000017</b></td></tr></table><br><br><br>From : Shreelight Power Pvt.Ltd<br>Ph : +91 265 2412551<br><b>UAN(MSME) : GJ24A0000958</b>"
-		recipient = "info@shreelight.com"
-		frappe.sendmail(recipients=[recipient],sender="info@shreelight.in",cc="admin@shreelight.com",
+		frappe.sendmail(recipients = recipient,cc = ["admin@shreelight.com","accounts@shreelight.com"],
 		subject="Payment Reminder", content=content)
+#		print(recipient)
 
 
 @frappe.whitelist(allow_guest=True)

@@ -4,5 +4,5 @@
 # import frappe
 import unittest
 
-class TestOutsiderDepartment(unittest.TestCase):
+class TestState(unittest.TestCase):
 	pass

@@ -1,7 +1,7 @@
 // Copyright (c) 2021, Hardik Gadesha and contributors
 // For license information, please see license.txt
 
-frappe.ui.form.on('Outsider Department', {
+frappe.ui.form.on('City', {
 	// refresh: function(frm) {
 
 	// }
